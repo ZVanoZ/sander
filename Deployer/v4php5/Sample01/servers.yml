@@ -1,0 +1,20 @@
+buildserver:
+    local: true
+#    deploy_path: ???
+    stage : buildstage
+    repository: https://github.com/ZVanoZ/sander.git
+#    build_path : .../.build
+
+testserver1:
+  host: 127.0.0.1
+#  user: username
+#  password: userpass
+#  deploy_path: .../testserver1.deploy_path
+  stage : teststage
+
+testserver2:
+  host: 127.0.0.1
+#  user: username
+#  password: userpass
+#  deploy_path: .../testserver2.deploy_path
+  stage : teststage
