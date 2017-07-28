@@ -16,17 +16,17 @@ add('writable_dirs', []);
 
 // Servers
 
-server('test1', '127.0.0.1')
+server('testserver1', '127.0.0.1')
     //->user('ivan')
     //->identityFile()
     //->pty(true)
-    ->set('deploy_path', __DIR__ . '/test1.deploy_path')
+    ->set('deploy_path', __DIR__ . '/testserver1.deploy_path')
 ;
-server('test2', '127.0.0.1')
+server('testserver2', '127.0.0.1')
     //->user('ivan')
     //->identityFile()
     //->pty(true)
-    ->set('deploy_path', __DIR__ . '/test2.deploy_path')
+    ->set('deploy_path', __DIR__ . '/testserver2.deploy_path')
 ;
  
 

@@ -13,7 +13,9 @@ add('shared_files', []);
 add('shared_dirs', []);
 add('writable_dirs', []);
 add('copy_dirs', []);
+// Настройки тянем из конфига
 serverList('servers.yml');
+// Хардкорная установка опций "директории для билда".
 set('build_path', __DIR__ . '/.build');
 set('build_current_path', get('build_path') . '/current');
 /**
@@ -94,30 +96,9 @@ task('release', [
     'deploy:writable',
     'deploy:symlink' // На удаленном сервере/Перебросить симлинк текущей папки на релизнкю
 ])->desc('Группа задачь для проливки текущего релиза на текущий сервер');
-//task('deploy', [
-//    'deploy:prepare',
-//    'deploy:lock',
-//    'deploy:release',
-//    //'deploy:update_code',
-//    'upload',
-//    'deploy:copy_dirs',
-//    'deploy:symlink',
-//    'deploy:unlock',
-//    'cleanup',
-//])->desc('Deploy your project');
 task('deploy', [
     //'build',
     'release',
     'cleanup',
     'success'
 ]);
-//desc('Restart PHP-FPM service');
-//task('php-fpm:restart', function () {
-//    writeln("Перезапуск PHP...");
-//    // The user must have rights for restart service
-//    // /etc/sudoers: username ALL=NOPASSWD:/bin/systemctl restart php-fpm.service
-////    run('sudo systemctl restart php-fpm.service');
-//});
-//after('deploy:symlink', 'php-fpm:restart');
-//// [Optional] if deploy fails automatically unlock.
-//after('deploy:failed', 'deploy:unlock');
