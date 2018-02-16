@@ -1,0 +1,25 @@
+AddDefaultCharset UTF-8
+
+Options +FollowSymlinks
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /
+
+# @TODO: написать корректный паттерн для работы из любой папки под Apache
+#	RedirectMatch ^(.*/external-script)/(.*)$           $1/resources/getResource.php?resource=$2 [L,QSA]
+#	RedirectMatch ^(.*/external-script)/(.*)$           /var/www/ZVanoZ@github.com/sander/JavaScript/javascript.ru/base/external-script/getResource.php [L,QSA]
+RedirectMatch  ^([^/]+)/.js$            /ZVanoZ@github.com/sander/JavaScript/javascript.ru/base//external-script/resources/getResource.php [L,QSA]
+
+
+#    RewriteCond %{REQUEST_FILENAME} -f
+#    RewriteRule ^(.*/external-script/)(.+.js)$           $1/resources/getResource.php?resource=$2 [L,QSA]
+#
+#	RewriteCond %{REQUEST_FILENAME} -s [OR]
+#	RewriteCond %{REQUEST_FILENAME} -l [OR]
+#	RewriteCond %{REQUEST_FILENAME} -d
+#	RewriteRule ^.*$ - [NC,L]
+##	#RewriteRule ^.*$ /getResource.php [NC,L]
+#    RewriteRule ^(.*/external-script/)(.+.js)$           $1/resources/getResource.php?resource=$2 [L,QSA]
+#
+##    RewriteRule ^([^/]+)\/(\*.js)$ $2/getResource.php?resource= [QSA,L]
+</IfModule>

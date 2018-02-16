@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://js.cx/test/libs.js"></script>
+    <script src="test.js"></script>
+</head>
+<body>
+<a href="http://learn.javascript.ru/testing#%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D1%8C%D1%82%D0%B5-%D1%82%D0%B5%D1%81%D1%82-%D0%BA-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B5">Добавить
+    к предыдущей задаче тесты</a>
+<br><a href="http://plnkr.co/edit/nRj3LNnHn8CcQxr4iJoo?p=preview">Песочница</a>
+<pre>
+/*
+Добавьте к предыдущей задаче тесты, которые будут проверять, что любое число, кроме нуля, в нулевой
+степени равно 1, а ноль в нулевой степени даёт NaN (это математически корректно, результат 00 не определён).
+
+При необходимости, исправьте саму функцию pow(), чтобы тесты проходили без ошибок.
+*/
+
+// В предыдущей задаче: Исправьте код функции pow, чтобы тесты проходили.
+function pow(x, n) {
+    var result = 1;
+    for (var i = 0; i < n; i++) {
+        result *= x;
+    }
+    return result;
+}
+</pre>
+<script>
+	function pow(x, n) {
+		if (n < 0) {
+			return NaN;
+		} else if (n !== Math.floor(n)) {
+			return NaN;
+		} else if (x == 0 && n == 0) {
+			return NaN;
+		}
+
+		var result = 1;
+		for (var i = 0; i < n; i++) {
+			result *= x;
+		}
+		return result;
+	}
+
+</script>
+</body>
+</html>

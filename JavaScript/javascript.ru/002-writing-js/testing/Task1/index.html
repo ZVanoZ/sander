@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://js.cx/test/libs.js"></script>
+    <script src="test.js"></script>
+</head>
+<body>
+<a href="http://learn.javascript.ru/testing#%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C-pow-%D0%BF%D0%BE-%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8">Сделать
+    pow по спецификации</a>
+<br><a href="http://plnkr.co/edit/Qa9aCWaxN1d6dvT7isTs?p=preview">Песочница</a>
+<pre>
+/*
+Исправьте код функции pow, чтобы тесты проходили.
+*/
+function pow(x, n) {
+    var result = 1;
+    for (var i = 0; i < n; i++) {
+        result *= x;
+    }
+    return result;
+}
+</pre>
+<script>
+	/* исправьте этот код */
+	function pow(x, n) {
+		if (n < 0) {
+			return NaN;
+		} else if (n !== Math.floor(n)) {
+			return NaN;
+		}
+
+		var result = 1;
+		for (var i = 0; i < n; i++) {
+			result *= x;
+		}
+		return result;
+	}
+
+</script>
+</body>
+</html>
