@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<a href="http://learn.javascript.ru/object">Объекты как ассоциативные массивы</a>
+<pre>
+Мини-задача на синтаксис объектов. Напишите код, по строке на каждое действие.
+1. Создайте пустой объект user.
+2. Добавьте свойство name со значением Вася.
+3. Добавьте свойство surname со значением Петров.
+4. Поменяйте значение name на Сергей.
+5. Удалите свойство name из объекта.
+
+Ответ в консоли браузера по F12 или CTRL+SHIFT+I
+</pre>
+<script>
+	(function() {
+		console.log('---1---')
+		var user = {};
+		console.log('user', user);
+	})();
+	(function() {
+		console.log('---2---')
+		var user = {};
+		user.name = 'Вася';
+		console.log('user', user);
+	})();
+	(function() {
+		console.log('---3---')
+		var user = {
+			name: 'Вася'
+		};
+		user.surname = 'Петров';
+		console.log('user', user);
+	})();
+	(function() {
+		console.log('---4---')
+		var user = {
+			name: 'Вася',
+			surname: 'Петров'
+		};
+		user.name = 'Сергей';
+		console.log('user', user);
+	})();
+	(function() {
+		console.log('---5---')
+		var user = {
+			name: 'Вася',
+			surname: 'Петров'
+		};
+		delete user.name;
+		console.log('user', user);
+
+	})();
+</script>
+</body>
+</html>
