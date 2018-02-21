@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<a href="http://learn.javascript.ru/object-for-in#%D1%81%D1%83%D0%BC%D0%BC%D0%B0-%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2">
+    Сумма свойств</a>
+<pre>
+Есть объект salaries с зарплатами. Напишите код, который выведет сумму всех зарплат.
+
+Если объект пустой, то результат должен быть 0.
+
+Например:
+</pre>
+<pre>
+"use strict";
+
+var salaries = {
+  "Вася": 100,
+  "Петя": 300,
+  "Даша": 250
+};
+
+//... ваш код выведет 650
+</pre>
+
+<script>
+	"use strict";
+
+	var salaries = {
+		"Вася": 100,
+		"Петя": 300,
+		"Даша": 250
+	};
+	//... ваш код выведет 650
+	alert((function(pSalaries) {
+		var result = 0;
+		for (var key in pSalaries) {
+			result += pSalaries[ key ];
+			console.log(key, pSalaries[ key ], result);
+		}
+		return result;
+	})(salaries))
+</script>
+</body>
+</html>

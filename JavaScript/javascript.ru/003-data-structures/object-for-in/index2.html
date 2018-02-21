@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<a href="http://learn.javascript.ru/object-for-in#%D1%81%D0%B2%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%BE-%D1%81-%D0%BD%D0%B0%D0%B8%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%B8%D0%BC-%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%D0%BC">
+    Свойство с наибольшим значением</a>
+<pre>
+Есть объект salaries с зарплатами. Напишите код, который выведет имя сотрудника, у которого самая большая зарплата.
+
+Если объект пустой, то пусть он выводит «нет сотрудников».
+
+Например:</pre>
+<pre>
+"use strict";
+var salaries = {
+  "Вася": 100,
+  "Петя": 300,
+  "Даша": 250
+};
+
+// ... ваш код выведет "Петя"
+</pre>
+
+<script>
+	"use strict";
+	var salaries = {
+		"Вася": 100,
+		"Петя": 300,
+		"Даша": 250
+	};
+
+	// ... ваш код выведет "Петя"
+	function getMaxSalaryName(pSalaries) {
+		var maxSalaryItem = undefined;
+		for (var key in pSalaries) {
+			if (maxSalaryItem === undefined || pSalaries[ key ] > maxSalaryItem.value) {
+				maxSalaryItem = {
+					name: key,
+					value: pSalaries[ key ]
+				}
+			}
+		}
+		return maxSalaryItem === undefined ? 'нет сотрудников' : maxSalaryItem.name;
+	}
+
+	alert('Test1: ' + getMaxSalaryName(salaries));
+	alert('Test2: ' + getMaxSalaryName({}));
+</script>
+</body>
+</html>

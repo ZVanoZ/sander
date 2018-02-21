@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<a href="http://learn.javascript.ru/object-for-in#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B8%D1%82%D0%B5-%D0%BF%D1%83%D1%81%D1%82-%D0%BB%D0%B8-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82">
+Определите, пуст ли объект</a>
+<pre>
+Создайте функцию isEmpty(obj), которая возвращает true, если в объекте нет свойств и false – если хоть одно свойство есть.
+
+Работать должно так:
+</pre>
+<pre>
+function isEmpty(obj) {
+  /* ваш код */
+}
+
+var schedule = {};
+
+alert( isEmpty(schedule) ); // true
+
+schedule["8:30"] = "подъём";
+
+alert( isEmpty(schedule) ); // false
+</pre>
+
+<script>
+	function isEmpty(obj) {
+		for (key in obj) {
+			return false;
+		}
+		return true;
+	}
+
+	var schedule = {};
+
+	alert(isEmpty(schedule)); // true
+
+	schedule[ "8:30" ] = "подъём";
+
+	alert(isEmpty(schedule)); // false
+</script>
+</body>
+</html>
